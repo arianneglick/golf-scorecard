@@ -1,0 +1,25 @@
+{
+  "name": "golf-score-card",
+  "version": "1.0.0",
+  "description": "Best golfing tool on the planet",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arianneglick/golf-score-card.git"
+  },
+  "keywords": [
+    "golf",
+    "awesome",
+    "arianne",
+    "banana"
+  ],
+  "author": "Arianne Glick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arianneglick/golf-score-card/issues"
+  },
+  "homepage": "https://github.com/arianneglick/golf-score-card#readme"
+}

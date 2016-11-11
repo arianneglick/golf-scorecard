@@ -1,0 +1,103 @@
+body{
+    background-color: white;
+    background: url('images/space.jpg');
+}
+#wholeCard{
+    background-color: white;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#leftCard{
+    width: 150px;
+    border-radius: 4px;
+    background-color: lightgray;
+    padding: 15px;
+
+}
+#rightCard{
+    width: auto;
+    display: flex;
+    padding: 15px;
+}
+.holeColumn{
+    border: 1px solid #CCC;
+    margin-right: 5px;
+    width: 30px;
+    text-align: center;
+}
+.glyphicon{
+    color: red;
+    padding-top: 2px;
+    cursor: pointer;
+}
+#playerCount{
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+.modalBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+.setupModal{
+    width: 300px;
+    margin: 0 auto;
+    height: auto;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: white;
+}
+#golfbanner {
+    width: 99%;
+    height: 650px;
+    background: url('images/planet 1.jpg');
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 35%;
+    margin: 25px auto;
+    clear: both;
+    position: relative;
+    min-height: 200px;
+    border-radius: 12px;
+    border: 1px solid #000;
+}
+.bar{
+    width: 100%;
+    height: 70px;
+    color: floralwhite;
+    background-color: purple;
+    border-radius: 12px;
+}
+.leftBar{
+    float: left;
+    width: 270px;
+}
+.rightBar{
+    float: right;
+    width: 250px;
+    padding-top: 8px;
+}
+#logo{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 15px;
+    background-color: purple;
+    border-radius: 12px;
+}
+#logoText{
+    padding: 10px;
+}

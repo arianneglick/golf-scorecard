@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="Pop()">Pop</button>
+<button onclick="Push()">Push</button>
+
+
+<p id="demo"></p>
+
+<script>
+
+    /*var cats = ["Persian", " Ragdoll", " Maine coon ", " Munchkin"];
+    document.getElementById("demo").innerHTML = cats;
+
+    function Pop(){
+
+        cats.pop ();
+        document.getElementById("demo").innerHTML = cats;
+
+    }
+    function Push(){
+        cats.push (" Calico");
+        document.getElementById("demo").innerHTML = cats;
+    }*/
+
+
+    function Stack(){
+        var data = [];
+
+        //methods
+        this.push = function (element){
+            data.push(value);
+        };
+        this.pop = function (){
+            return data.pop();
+        };
+        this.peek = function (){
+            return data[data.length - 1];
+        };
+        this.size = function (){
+            return data.length();
+        };
+    }
+
+
+</script>
+</body>
+</html>

@@ -12,10 +12,12 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
+#courseName{
+    color: white;
+}
 #leftCard{
     width: 150px;
     border-radius: 4px;
-    background-color: lightgray;
     padding: 15px;
 
 }
@@ -78,7 +80,7 @@ body{
     width: 100%;
     height: 70px;
     color: floralwhite;
-    background-color: purple;
+    background-color: rgba(153, 51, 153, 0.6);
     border-radius: 12px;
 }
 .leftBar{
@@ -90,14 +92,26 @@ body{
     width: 250px;
     padding-top: 8px;
 }
-#logo{
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 15px;
-    background-color: purple;
-    border-radius: 12px;
-}
 #logoText{
     padding: 10px;
+    font-size: 250%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#scoreTable{
+    width:100%;
+}
+#addButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

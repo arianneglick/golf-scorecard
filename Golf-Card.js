@@ -27,25 +27,29 @@ function loadCourses(theid){
     $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function(data, status){
         selectedCourse = JSON.parse(data);
         $("#courseName").html(selectedCourse.course.name);
-        for(var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++){
-            $("#teeType").append("<option value='" + i + "'>"+ selectedCourse.course.holes[0].tee_boxes[i].tee_type +"</option>");
+        for(var t = 0; t < (selectedCourse.course.holes[0].tee_boxes.length - 1); t++) {
+            $("#teeType").append("<option value='" + t + "'>" + selectedCourse.course.holes[0].tee_boxes[t].tee_type + "</option>");
         }
-        for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
-            $(".par").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].par + "</option>");
+        for (var p = 0; p < (selectedCourse.course.holes[0].tee_boxes.length - 1); p++) {
+            $(".par").append("<option value='" + p + "'>" + selectedCourse.course.holes[0].tee_boxes[p].par + "</option>");
+        }
+        for (var y = 0; y < (selectedCourse.course.holes[0].tee_boxes.length - 1); y++) {
+            $(".yards").append("<option value='" + y + "'>" + selectedCourse.course.holes[0].tee_boxes[y].yards + "</option>");
         }
     });
 }
-/*function loadPar() {
+/*function loadPar(theid) {
+    $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
+        selectedCourse = JSON.parse(data);
+        for (var p = 0; p < (selectedCourse.course.holes[0].tee_boxes.length - 1); p++) {
+        $(".par").append("<option value='" + p + "'>" + selectedCourse.course.holes[0].tee_boxes[i].par + "</option>");
+        }
+    });
+ }
+ function yardage(theid) {
  $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
  for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
- $(".par").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].par + "</option>");
- }
- });
- }
- function yardage() {
- $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
- for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
- $("#yards").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].yards + "</option>");
+ $(".yards").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].yards + "</option>");
  }
  });
  }*/
@@ -104,6 +108,9 @@ function myCreateFunction() {
         element10.className="textBox";
         cell10.appendChild(element10);
     var cell11 = row.insertCell(10);
+        /*var element11 = element2 + element3 + element4 + element5 + element6 + element7 + element8 + element9 + element10;
+        cell11.appendChild(element11);
+        document.getElementById('frontTotal').innerHTML = element11;*/
     var cell12 = row.insertCell(11);
         var element12 = document.createElement('input');
         element12.type="text";
@@ -166,7 +173,6 @@ function beginCard(){
     for(var c = 1; c <= numberOfHoles; c++){
         $("#rightCard").append("<div id='column" + c +"' class='holeColumn'><div class='columnHeader'>" + c +"</div></div>");
     }
-
 }
 /*function calculatescore(theplayer){
  var thetotal = 0;

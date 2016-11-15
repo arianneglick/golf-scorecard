@@ -3,7 +3,7 @@ body{
     background: url('images/space.jpg');
 }
 #wholeCard{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
     width: 90%;
     margin: 20px auto;
     border-radius: 4px;
@@ -25,6 +25,7 @@ body{
     width: auto;
     display: flex;
     padding: 15px;
+    overflow-x: auto;
 }
 .holeColumn{
     border: 1px solid #CCC;
@@ -98,11 +99,23 @@ body{
 }
 table, th, td {
     border: 1px solid black;
-    border-collapse: collapse;
+
 }
-#scoreTable{
+th, td{
+    padding: 10px;
+}
+table{
+    border-collapse: collapse;
     width:100%;
 }
+th {
+    height: 25px;
+}
+td {
+    height: 15px;
+}
+tr:hover{background-color: greenyellow}
+
 #addButton {
     background-color: #4CAF50;
     border: none;
@@ -114,4 +127,19 @@ table, th, td {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+#deleteButton{
+    background-color: darkorange;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.textBox {
+    width: 15px;
 }

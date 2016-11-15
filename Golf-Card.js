@@ -30,57 +30,132 @@ function loadCourses(theid){
         for(var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++){
             $("#teeType").append("<option value='" + i + "'>"+ selectedCourse.course.holes[0].tee_boxes[i].tee_type +"</option>");
         }
+        for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
+            $(".par").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].par + "</option>");
+        }
     });
 }
-
-for(var pl = 1; pl <= numplayers; pl++ ) {
-    playercollection += "<div id='player" + pl + "' class='holebox playerbox'> Player " + pl + " <span onclick='deleteplayer(" + pl + ")' class='deletebtn glyphicon glyphicon-minus-sign'></span></div>";
-    grandtotalcollection += "<div id='grand" + pl + "' class='holebox'>0</div>";
-}
-function calculatescore(theplayer){
-    var thetotal = 0;
-    for(var t = 1; t <= numholes; t++){
-        thetotal += Number($("#player" + theplayer + "hole" + t).val());
-    }
-    $("#grand" + theplayer).html(thetotal);
-}
-
-function deleteplayer(playerid){
-    $("#player" + playerid).remove();
-    $("#grand" + playerid).remove();
-    for(var p = 1; p <= numholes; p++){
-        $("#player" + playerid + "hole" + p).remove();
-    }
-}
+/*function loadPar() {
+ $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
+ for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
+ $(".par").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].par + "</option>");
+ }
+ });
+ }
+ function yardage() {
+ $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
+ for (var i = 0; i < (selectedCourse.course.holes[0].tee_boxes.length - 1); i++) {
+ $("#yards").append("<option value='" + i + "'>" + selectedCourse.course.holes[0].tee_boxes[i].yards + "</option>");
+ }
+ });
+ }*/
 
 function myCreateFunction() {
     var table = document.getElementById("scoreTable");
-    var row = table.insertRow(scoreTable.length);
+    var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
+        var element1 = document.createElement('input');
+        element1.type="text";
+        element1.className="nameBox";
+        cell1.appendChild(element1);
     var cell2 = row.insertCell(1);
+        var element2 = document.createElement('input');
+        element2.type="text";
+        element2.className="textBox";
+        cell2.appendChild(element2);
     var cell3 = row.insertCell(2);
+        var element3 = document.createElement('input');
+        element3.type="text";
+        element3.className="textBox";
+        cell3.appendChild(element3);
     var cell4 = row.insertCell(3);
+        var element4 = document.createElement('input');
+        element4.type="text";
+        element4.className="textBox";
+        cell4.appendChild(element4);
     var cell5 = row.insertCell(4);
+        var element5 = document.createElement('input');
+        element5.type="text";
+        element5.className="textBox";
+        cell5.appendChild(element5);
     var cell6 = row.insertCell(5);
+        var element6 = document.createElement('input');
+        element6.type="text";
+        element6.className="textBox";
+        cell6.appendChild(element6);
     var cell7 = row.insertCell(6);
+        var element7 = document.createElement('input');
+        element7.type="text";
+        element7.className="textBox";
+        cell7.appendChild(element7);
     var cell8 = row.insertCell(7);
+        var element8 = document.createElement('input');
+        element8.type="text";
+        element8.className="textBox";
+        cell8.appendChild(element8);
     var cell9 = row.insertCell(8);
+        var element9 = document.createElement('input');
+        element9.type="text";
+        element9.className="textBox";
+        cell9.appendChild(element9);
     var cell10 = row.insertCell(9);
+        var element10 = document.createElement('input');
+        element10.type="text";
+        element10.className="textBox";
+        cell10.appendChild(element10);
     var cell11 = row.insertCell(10);
     var cell12 = row.insertCell(11);
+        var element12 = document.createElement('input');
+        element12.type="text";
+        element12.className="textBox";
+        cell12.appendChild(element12);
     var cell13 = row.insertCell(12);
+        var element13 = document.createElement('input');
+        element13.type="text";
+        element13.className="textBox";
+        cell13.appendChild(element13);
     var cell14 = row.insertCell(13);
+        var element14 = document.createElement('input');
+        element14.type="text";
+        element14.className="textBox";
+        cell14.appendChild(element14);
     var cell15 = row.insertCell(14);
+        var element15 = document.createElement('input');
+        element15.type="text";
+        element15.className="textBox";
+        cell15.appendChild(element15);
     var cell16 = row.insertCell(15);
+        var element16 = document.createElement('input');
+        element16.type="text";
+        element16.className="textBox";
+        cell16.appendChild(element16);
     var cell17 = row.insertCell(16);
+        var element17 = document.createElement('input');
+        element17.type="text";
+        element17.className="textBox";
+        cell17.appendChild(element17);
     var cell18 = row.insertCell(17);
+        var element18 = document.createElement('input');
+        element18.type="text";
+        element18.className="textBox";
+        cell18.appendChild(element18);
     var cell19 = row.insertCell(18);
+        var element19 = document.createElement('input');
+        element19.type="text";
+        element19.className="textBox";
+        cell19.appendChild(element19);
     var cell20 = row.insertCell(19);
+        var element20 = document.createElement('input');
+        element20.type="text";
+        element20.className="textBox";
+        cell20.appendChild(element20);
+    var cell21 = row.insertCell(20);
+    var cell22 = row.insertCell(21);
 
 }
 
 function myDeleteFunction() {
-    document.getElementById("myTable").deleteRow(0);
+    document.getElementById("scoreTable").deleteRow(-1);
 }
 
 
@@ -94,11 +169,9 @@ function beginCard(){
 
 }
 /*function calculatescore(theplayer){
-    var thetotal = 0;
-    for(var t = 1; t <= numholes; t++){
-        thetotal += Number($("#player" + theplayer + "hole" + t).val());
-    }
-    $("#grand" + theplayer).html(thetotal);
-}*/
-
-
+ var thetotal = 0;
+ for(var t = 1; t <= numholes; t++){
+ thetotal += Number($("#player" + theplayer + "hole" + t).val());
+ }
+ $("#grand" + theplayer).html(thetotal);
+ }*/

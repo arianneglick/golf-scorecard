@@ -25,7 +25,7 @@
             <div class="rightBar">
                 <div id="countdown"></div>
                 <label>Golf Course:</label><select id="courseSelect" onchange="loadCourses(this.value)"></select>
-                <label>Tee:</label><select id="teeType" onchange="loadPar()"></select>
+                <label>Tee:</label><select id="teeType" onchange="loadPar(this.value)"></select>
             </div>
         </div>
 
@@ -36,6 +36,7 @@
 
         </div>
         <h3 id="courseName"></h3>
+        <h3 id="Tee"></h3>
         <div id="wholeCard">
             <div id="leftCard">
                 <button id="addButton" onclick="myCreateFunction()">Add Player</button>
@@ -45,75 +46,99 @@
                 <table id="scoreTable">
                     <tr>
                         <th> Name </th>
-                        <th> 1 </th>
-                        <th> 2 </th>
-                        <th> 3 </th>
-                        <th> 4 </th>
-                        <th> 5 </th>
-                        <th> 6 </th>
-                        <th> 7 </th>
-                        <th> 8 </th>
-                        <th> 9 </th>
+                        <th> Hole 1 </th>
+                        <th> Hole 2 </th>
+                        <th> Hole 3 </th>
+                        <th> Hole 4 </th>
+                        <th> Hole 5 </th>
+                        <th> Hole 6 </th>
+                        <th> Hole 7 </th>
+                        <th> Hole 8 </th>
+                        <th> Hole 9 </th>
                         <th id="frontTotal"> Front Total </th>
-                        <th> 10 </th>
-                        <th> 11 </th>
-                        <th> 12 </th>
-                        <th> 13 </th>
-                        <th> 14 </th>
-                        <th> 15 </th>
-                        <th> 16 </th>
-                        <th> 17 </th>
-                        <th> 18 </th>
+                        <th> Hole 10 </th>
+                        <th> Hole 11 </th>
+                        <th> Hole 12 </th>
+                        <th> Hole 13 </th>
+                        <th> Hole 14 </th>
+                        <th> Hole 15 </th>
+                        <th> Hole 16 </th>
+                        <th> Hole 17 </th>
+                        <th> Hole 18 </th>
                         <th> Back Total </th>
                         <th> Grand Total </th>
                     </tr>
-                    <tr>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
-                        <th class="par"></th>
+                    <tr id="pars">
+                        <th></th>
+                        <th class="par" onload="parTotalFront()">par:</th>
+                        <th class="par" onload="parTotalFront()">par:</th>
+                        <th class="par" onload="parTotalFront()">par:</th>
+                        <th class="par" onload="parTotalFront()">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th id="parTotalFront"></th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th class="par">par:</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     <tr>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
-                        <th class="yards"></th>
+                        <th></th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th></th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th class="yards">yards:</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th></th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th class="hcp">hcp:</th>
+                        <th></th>
+                        <th></th>
                     </tr>
 
                 </table>

@@ -17,7 +17,7 @@ var selectedTee;
 
 
 $( document ).ready(function() {
-    $.post("http://golf-courses-api.herokuapp.com/courses/", geoLocation, function(data, status){
+    $.post("https://golf-courses-api.herokuapp.com/courses/", geoLocation, function(data, status){
         nearCourses = JSON.parse(data);
         for(var p in nearCourses.courses){
             var selectInput = "<option value='" + nearCourses.courses[p].id + "'>"+ nearCourses.courses[p].name +"</option>";
@@ -27,7 +27,7 @@ $( document ).ready(function() {
 });
 
 function loadCourses(theid){
-    $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function(data, status){
+    $.get("https://golf-courses-api.herokuapp.com/courses/" + theid, function(data, status){
         selectedCourse = JSON.parse(data);
         $("#courseName").html(selectedCourse.course.name);
         for(var t = 0; t < (selectedCourse.course.holes[0].tee_boxes.length - 1); t++) {
@@ -44,15 +44,7 @@ function loadCourses(theid){
         }
     });
 }
-function loadPar(theid){
-    $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function(data, status){
-        selectedTee = JSON.parse(data);
-        $("#Tee").html(selectedTee.course.holes[0].tee_boxes[t].tee_type);
-        for (var i = 0; i < (selectedTee.course.holes[0].tee_boxes.length - 1); i++) {
-            $(".par").append("<option value='" + i + "'>" + selectedTee.course.holes[0].tee_boxes[i].par + "</option>");
-        }
-    });
-}
+
 /*function loadPar(theid) {
  $.get("http://golf-courses-api.herokuapp.com/courses/" + theid, function (data, status) {
  selectedCourse = JSON.parse(data);
@@ -79,16 +71,19 @@ function myCreateFunction() {
     var element2 = document.createElement('input');
     element2.type="text";
     element2.className="textBox";
+    element2.onchange="calculateFrontSum()";
     cell2.appendChild(element2);
     var cell3 = row.insertCell(2);
     var element3 = document.createElement('input');
     element3.type="text";
     element3.className="textBox";
+    element3.onchange="calculateFrontSum()";
     cell3.appendChild(element3);
     var cell4 = row.insertCell(3);
     var element4 = document.createElement('input');
     element4.type="text";
     element4.className="textBox";
+    element4.onchange="calculateFrontSum()";
     cell4.appendChild(element4);
     var cell5 = row.insertCell(4);
     var element5 = document.createElement('input');
@@ -121,8 +116,9 @@ function myCreateFunction() {
     element10.className="textBox";
     cell10.appendChild(element10);
     var cell11 = row.insertCell(10);
-    //var frontScore = element2 + element3 + element4 + element5 + element6 + element7 + element8 + element9 + element10;
-    //cell11.appendChild(frontScore);
+    var element11 = document.createElement('P');
+    element11.id="par";
+    cell11.appendChild(element11);
     var cell12 = row.insertCell(11);
     var element12 = document.createElement('input');
     element12.type="text";
@@ -172,6 +168,30 @@ function myCreateFunction() {
     var cell22 = row.insertCell(21);
 
 }
+$(document).ready(function () {
+    //iterate through each textboxes and add keyup
+    //handler to trigger sum event
+    $(".textBox").each(function () {
+        $(this).keyup(function () {
+            calculateFrontSum();
+        });
+    });
+});
+function calculateFrontSum() {
+    var sum = 0;
+    //iterate through each textbox and add the values
+    $(".textBox").each(function () {
+        //add only if the value is number
+        if (!isNaN($(this).val()) && $(this).val().length != 0) {
+            sum += parseFloat(this.value);
+        }
+    });
+
+    $("#sum").val(sum.toFixed(0));
+}
+function calculateParSum() {
+}
+
 
 /*function parTotalFront(){
  var arr = document.getElementsByClassName('par');

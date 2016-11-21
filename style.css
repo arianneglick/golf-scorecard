@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: greenyellow;
     background: url('images/space.jpg');
 }
 #wholeCard{
@@ -63,6 +63,7 @@ body{
 #golfbanner {
     width: 99%;
     height: 650px;
+    background-color: cyan;
     background: url('images/planet 1.jpg');
     top: 0;
     right: 0;
